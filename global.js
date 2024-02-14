@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
   * {
     margin: 0;
@@ -11,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #root {
-      height: 100%;
+    height: 100%;
   }
 
   body {
