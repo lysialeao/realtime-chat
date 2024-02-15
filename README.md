@@ -25,8 +25,8 @@ And start the project
 
 ``npm run dev``
 
-Next features
+## Next features
 As an improvement, we can introduce new ways for users to register on the platform, as well as create private chat rooms and media sending.
 
-Contact
+## Contact
 Feel free to suggest improvements :) send messages here or via my email: lysialeao@gmail.com
