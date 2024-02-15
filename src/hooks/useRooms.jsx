@@ -1,7 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-import { addDoc, collection,  query,  limit } from "firebase/firestore"
-import { useCollectionData } from "react-firebase-hooks/firestore"
+import { addDoc, collection, getDocs } from "firebase/firestore"
 
 import { databaseApp } from "../services/firebase"
 
@@ -11,11 +10,17 @@ export const useRooms = () => {
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [roomActive, setRoomActive] = useState('')
+    const [ rooms, setRooms ] = useState()
 
     const roomRef = collection(databaseApp, "room")
-    const queryRooms = query(roomRef, limit(25));
-    const rooms = useCollectionData(queryRooms,  { idField: "id"})
 
+    const getRooms = async () => {
+        const data = await getDocs(roomRef)
+        setRooms(data.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id
+        })))
+    }
 
     const openModal = () => {
         setModal(true);
@@ -35,6 +40,10 @@ export const useRooms = () => {
         setDescription('')
         setModal(false)
     }
+
+    useEffect(() => {
+        getRooms()
+    }, [])
 
     const values = {
         name,

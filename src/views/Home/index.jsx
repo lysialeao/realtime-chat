@@ -40,7 +40,8 @@ export const Home = () => {
         name,
         description,
         setName, 
-        setDescription
+        setDescription,
+        setRoomActive,
     } = useRooms()
 
     return (
@@ -89,16 +90,16 @@ export const Home = () => {
                         <Button 
                             variant="contained" 
                             onClick={openModal}
-                            color="error"
+                            style={{ backgroundColor: '#e84a27'}}
                         >
                             {TEXTS.CREATE_NEW_ROOM}
                         </Button>
                     </NewChat>
                 </TopContainer>
                 <BottomContainer>
-                    {rooms && rooms[0]?.map((room, index) => {
+                    {rooms && rooms.map((room, index) => {
                         return (
-                            <Room key={index} onClick={() => setRoom(room)}>
+                            <Room key={index} onClick={() => setRoomActive(room)}>
                                 <Avatar 
                                     shape="circle" 
                                     size="xlarge" 
@@ -118,10 +119,25 @@ export const Home = () => {
             </Wrapper>
             <Wrapper>
                 <TopContainer>
-                    <Icon src={photoURL} />
+                    <WrapperRow justify={'start'}>
+                        <Avatar 
+                            shape="circle" 
+                            size="xlarge" 
+                            style={{ backgroundColor: '#e84a27', color: '#ffffff' }}
+                        >
+                            {/* {roomActive?.name[0]} */}
+                        </Avatar>
+                        <div>
+                            <Typography variant="h6" gutterBottom>
+                                {roomActive?.name}
+                            </Typography>
+                            <h4>{roomActive?.description}</h4>
+
+                        </div>
+                    </WrapperRow>
                 </TopContainer>
                 <BottomContainer>
-                    <ChatRoom room={roomActive}/>
+                    <ChatRoom room={roomActive?.id}/>
                 </BottomContainer>
             </Wrapper>
             </Content>

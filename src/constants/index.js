@@ -8,5 +8,6 @@ export const TEXTS = {
     CLOSE: 'Fechar',
     SEND: 'Enviar',
     DESCRIPTION: 'Descrição',
-    ROOM_NAME: 'Nome da sala'
+    ROOM_NAME: 'Nome da sala',
+    EMPTY_ROOM: 'Ainda não há mensagens nesse chat. Vamos iniciar?'
 }
