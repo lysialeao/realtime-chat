@@ -19,6 +19,7 @@ export const Content = styled.div`
 
     margin-left: 72px;
 
+
 `
 
 export const Wrapper = styled.div`
@@ -64,7 +65,7 @@ export const TopContainer = styled.div`
     height: 80px;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #f6f6f6;
     border-radius: 20px;
 
@@ -98,6 +99,8 @@ export const Room = styled.div`
     padding: 8px;
     gap: 8px;
 
+    cursor: pointer;
+
 `
 export const Form = styled.form`
     display: flex;
@@ -117,5 +120,5 @@ export const WrapperRow = styled.div`
     display: flex;
     padding: 8px;
     gap: 8px;
-    justify-content: flex-end;
+    /* justify-content: ${({ justify }) => justify ?? 'flex-end'}; */
 `

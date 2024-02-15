@@ -2,8 +2,8 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import Button from '@mui/material/Button'
 import GoogleIcon from '@mui/icons-material/Google'
 
+import banner from '../../assets/undraw_coffee_with_friends.svg'
 import { auth } from '../../services/firebase'
-import banner from '../../assets/woman-talking.avif'
 
 import { TEXTS } from '../../constants'
 
@@ -26,8 +26,8 @@ export const SignIn = () => {
                 <Button 
                     variant="contained" 
                     onClick={() => signInWithGoogle()}
-                    color="error"
-                    endIcon={<GoogleIcon />}
+                    style={{backgroundColor: '#E84A27'}}
+                    startIcon={<GoogleIcon />}
                 >
                     {TEXTS.LOGIN_WITH_GOOGLE}
                 </Button>

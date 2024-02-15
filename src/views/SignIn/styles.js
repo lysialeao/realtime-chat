@@ -7,6 +7,11 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: 2fr 1fr;
     flex-direction: row;
+
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const Content = styled.div`
@@ -21,12 +26,16 @@ export const Content = styled.div`
     padding: 40px;
     gap: 20px;
 
-    background-color:#dfdfdf;
+    background-color:#e6e6e6;
      
 
     h1 {
         color: #e74428;
     } 
+
+    h2 {
+       color: #3f3d56;
+    }
 
 
 `
