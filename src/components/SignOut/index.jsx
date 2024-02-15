@@ -1,4 +1,5 @@
 import Button from '@mui/material/Button'
+import ExitToAppIcon from '@mui/icons-material/ExitToApp'
 
 import { auth } from "../../services/firebase"
 
@@ -8,9 +9,10 @@ export const SignOut = () => {
     return (
         auth.currentUser && (
             <Button 
-                variant="contained" 
+                variant="text" 
                 onClick={() => auth.signOut()}
-                color="error"
+                style={{ color: '#e84a27'}}
+                endIcon={<ExitToAppIcon />}
             >
                 {TEXTS.LOGOUT}
             </Button>

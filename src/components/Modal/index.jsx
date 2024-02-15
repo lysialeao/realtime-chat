@@ -1,7 +1,5 @@
 
-import Button from '@mui/material/Button'
-
-import { TEXTS } from '../../constants'
+import CloseIcon from '@mui/icons-material/Close'
 
 import { ModalWrapper, ModalContent, WrapperRow } from "./styles"
 
@@ -10,16 +8,10 @@ export const Modal = ({ isOpen, onClose, children }) => {
     return (
         <ModalWrapper>
             <ModalContent>
-                {children}
                 <WrapperRow>
-                    <Button 
-                        variant="contained" 
-                        onClick={onClose}
-                        color="inherit"
-                    >
-                        {TEXTS.CLOSE}
-                    </Button>
+                    <CloseIcon onClick={onClose} /> 
                 </WrapperRow>
+                {children}
             </ModalContent>
         </ModalWrapper>
     )

@@ -39,6 +39,7 @@ export const useRooms = () => {
         setName('')
         setDescription('')
         setModal(false)
+        getRooms()
     }
 
     useEffect(() => {

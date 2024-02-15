@@ -4,7 +4,7 @@ export const TEXTS = {
     LOGIN_WITH_GOOGLE: 'Logar com o Google',
     LOGOUT: 'Sair',
     CREATE_NEW_ROOM: 'Criar nova sala',
-    ROOM_INFORMATIONS: 'Preencha aqui informações a respeito da sala de bate-papo, como nome e descrição',
+    ROOM_INFORMATIONS: 'Preencha aqui informações a respeito da sala de bate-papo, como nome e descrição. Depois disso, sua sala estará aberta para pessoas conversarem.',
     CLOSE: 'Fechar',
     SEND: 'Enviar',
     DESCRIPTION: 'Descrição',

@@ -39,21 +39,8 @@ export const Form = styled.form`
     outline: none;
     border: solid 1px #a1a1a1;;
     padding:6px;
-    border-radius: 10px;
-  
-  }
+    border-radius: 6px;
 
-  button {
-    background-color: #ed6949;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 1.25rem;
-    border-radius: 10px;
   }
 
 `

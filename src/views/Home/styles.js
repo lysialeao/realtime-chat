@@ -118,7 +118,17 @@ export const Form = styled.form`
 
 export const WrapperRow = styled.div`
     display: flex;
-    padding: 8px;
+    padding: 8px; 
     gap: 8px;
-    /* justify-content: ${({ justify }) => justify ?? 'flex-end'}; */
+    justify-content: flex-end;
+    align-items: center;
+    
+`
+
+export const WrapperInformations = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
 `

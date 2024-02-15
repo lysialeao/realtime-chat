@@ -1,4 +1,10 @@
-# React + Vite
+# Realtime chat application
 
-## Tela de login 
-url(![alt text](image.png))
+## Login screen
+![alt text](image.png)
+
+## Empty state
+![alt text](image-1.png)
+
+## Create a new room
+![alt text](image-2.png)

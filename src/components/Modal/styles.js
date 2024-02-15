@@ -24,9 +24,11 @@ export const ModalContent = styled.div`
 
 export const WrapperRow = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 
-  margin-top: 40px;
-  gap: 8px;
+  svg {
+    cursor: pointer;
+  }
+
 
 `

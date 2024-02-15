@@ -1,3 +1,5 @@
+import Button from '@mui/material/Button'
+import SendIcon from '@mui/icons-material/Send'
 import { Message } from "../../components/Message"
 import { EmptyState } from "../../components/EmptyState"
 import { TEXTS } from "../../constants"
@@ -27,7 +29,15 @@ export const ChatRoom = ({ room }) => {
         <div ref={dummy}/>
         <Form onSubmit={sendMessage}>
             <input type='text' value={msg} onChange={(e) => setMsg(e.target.value)}/>
-            <button type="submit">enviar</button>
+            <Button 
+                variant="contained" 
+                onClick={() => auth.signOut()}
+                style={{ backgroundColor: '#e84a27'}}
+                type='submit'
+                endIcon={<SendIcon />}
+            >
+                {TEXTS.SEND}
+            </Button>
         </Form>
         </Container>
     )

@@ -2,10 +2,13 @@ import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
+
+import AddIcon from '@mui/icons-material/Add'
         
 import { Header } from "../../components/Header"
 import { Modal } from "../../components/Modal"
 
+import avatar from '../../assets/undraw_having_fun.svg'
 
 import { useRooms } from "../../hooks/useRooms"
 import { auth } from "../../services/firebase"
@@ -24,7 +27,8 @@ import {
     Icon, 
     Room,
     Form,
-    WrapperRow
+    WrapperRow,
+    WrapperInformations
 } from "./styles"
 
 
@@ -48,12 +52,12 @@ export const Home = () => {
         <Container>
             <Header />
         <Content>
-            <Modal isOpen={modal} onClose={closeModal} acceptText={'Enviar'}>
-                <Typography variant="h4" gutterBottom>
+            <Modal isOpen={modal} onClose={closeModal}>
+                <Typography variant="h6" gutterBottom>
                     {TEXTS.CREATE_NEW_ROOM}
                 </Typography>
-                <Typography variant="h6" gutterBottom>
-                {TEXTS.ROOM_INFORMATIONS}
+                <Typography variant="body1" gutterBottom>
+                    {TEXTS.ROOM_INFORMATIONS}
                 </Typography>
                 <Form onSubmit={handleOnSubmit}> 
                     <TextField  
@@ -76,9 +80,10 @@ export const Home = () => {
                         <Button 
                             variant="contained" 
                             type="submit"
-                            color="error"
+                            style={{ backgroundColor: '#e84a27'}}
+                            endIcon={<AddIcon />}
                         >
-                            {TEXTS.SEND}
+                            {TEXTS.CREATE_NEW_ROOM}
                         </Button>
                     </WrapperRow>
                 </Form>
@@ -91,6 +96,7 @@ export const Home = () => {
                             variant="contained" 
                             onClick={openModal}
                             style={{ backgroundColor: '#e84a27'}}
+                            endIcon={<AddIcon />}
                         >
                             {TEXTS.CREATE_NEW_ROOM}
                         </Button>
@@ -119,22 +125,17 @@ export const Home = () => {
             </Wrapper>
             <Wrapper>
                 <TopContainer>
-                    <WrapperRow justify={'start'}>
+                    <WrapperInformations>
                         <Avatar 
                             shape="circle" 
                             size="xlarge" 
+                            src={avatar}
                             style={{ backgroundColor: '#e84a27', color: '#ffffff' }}
-                        >
-                            {/* {roomActive?.name[0]} */}
-                        </Avatar>
-                        <div>
-                            <Typography variant="h6" gutterBottom>
+                        />
+                            <Typography variant="subtitle2" gutterBottom>
                                 {roomActive?.name}
                             </Typography>
-                            <h4>{roomActive?.description}</h4>
-
-                        </div>
-                    </WrapperRow>
+                    </WrapperInformations>
                 </TopContainer>
                 <BottomContainer>
                     <ChatRoom room={roomActive?.id}/>
